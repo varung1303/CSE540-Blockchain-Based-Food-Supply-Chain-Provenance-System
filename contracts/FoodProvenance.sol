@@ -29,12 +29,11 @@ contract FoodProvenance is AccessControl {
     bytes32 public constant REGULATOR_ROLE = keccak256("REGULATOR_ROLE");  // Regulator: audits and verifies information
 
 
-    // Enum for product status
     // This shows what stage the product is in the supply chain.
     enum Status { Created, InTransit, Received, Recalled, Invalid }
 
  
-    // Struct to store product data
+    // store product data
     struct Product {
         uint256 id;            // Unique ID for the batch or product
         address owner;         // Current owner (farmer, distributor, retailer)
@@ -44,13 +43,13 @@ contract FoodProvenance is AccessControl {
         string metadataURI;    // Link to extra data 
     }
 
-    // Mappings to store product data
+    // store product data
     mapping(uint256 => Product) private products;          // productId => product details
     mapping(uint256 => address[]) private productHistory;  // productId => list of owners
     mapping(uint256 => bool) private exists;               // productId => true/false if product exists
 
 
-    // Events - to log important actions
+    // log important actions
     event ProductRegistered(uint256 indexed productId, address indexed farmer);
     event OwnershipTransferred(uint256 indexed productId, address indexed from, address indexed to);
     event StatusUpdated(uint256 indexed productId, Status newStatus, address indexed updatedBy);
@@ -140,8 +139,6 @@ contract FoodProvenance is AccessControl {
                           msg.sender == products[productId].owner;
 
         require(authorized, "Not authorized to update status");
-
-        // Update and emit event
         products[productId].status = newStatus;
         emit StatusUpdated(productId, newStatus, msg.sender);
     }
@@ -178,7 +175,7 @@ contract FoodProvenance is AccessControl {
         return productHistory[productId];
     }
     
-    //to check if a product is registered or not.
+    //check if a product is registered or not.
     function existsProduct(uint256 productId)
         external
         view
