@@ -15,7 +15,7 @@ This project is a prototype of a blockchain-based food supply chain provenance s
 This repo contains:
 - `contracts/FoodProvenance.sol` — Draft contract (interfaces, events, data model, implemented core functions).
 - `README.md` — (this file).
-- `docs/` — TBD ( will populate in next iteration )
+- `docs/` — Project Pitch as of now but will consist of other material later on. (TBD)
 
 ## Project goals (short)
 - Provide transparent, tamper-evident provenance for food items.
