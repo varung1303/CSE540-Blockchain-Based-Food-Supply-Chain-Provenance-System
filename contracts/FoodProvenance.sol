@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.19;
 
 // This draft smart contract is for a blockchain-based food supply chain provenance system.
@@ -10,49 +10,42 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract FoodProvenance is AccessControl {
 
-    // -------------------------------
+
     // Roles - define who does what
-    // -------------------------------
     bytes32 public constant FARMER_ROLE = keccak256("FARMER_ROLE");        // Farmer: registers food batches
     bytes32 public constant DISTRIBUTOR_ROLE = keccak256("DISTRIBUTOR_ROLE"); // Distributor: records transport updates
     bytes32 public constant RETAILER_ROLE = keccak256("RETAILER_ROLE");    // Retailer: confirms product receipt
     bytes32 public constant REGULATOR_ROLE = keccak256("REGULATOR_ROLE");  // Regulator: audits and verifies information
 
-    // -------------------------------
+
     // Enum for product status
-    // -------------------------------
     // This shows what stage the product is in the supply chain.
     enum Status { Created, InTransit, Received, Recalled, Invalid }
 
-    // -------------------------------
+ 
     // Struct to store product data
-    // -------------------------------
     struct Product {
         uint256 id;            // Unique ID for the batch or product
         address owner;         // Current owner (farmer, distributor, retailer)
-        Status status;         // Current status (like Created, InTransit, etc.)
+        Status status;         // Current status (like Created, InTransit, etc)
         uint256 createdAt;     // Timestamp when the product was registered
-        string origin;         // Where the product came from (farm name or location)
-        string metadataURI;    // Link to extra data or certificates (like IPFS link)
+        string origin;         // Where the product came from 
+        string metadataURI;    // Link to extra data 
     }
 
-    // -------------------------------
     // Mappings to store product data
-    // -------------------------------
     mapping(uint256 => Product) private products;          // productId => product details
     mapping(uint256 => address[]) private productHistory;  // productId => list of owners
     mapping(uint256 => bool) private exists;               // productId => true/false if product exists
 
-    // -------------------------------
+
     // Events - to log important actions
-    // -------------------------------
     event ProductRegistered(uint256 indexed productId, address indexed farmer);
     event OwnershipTransferred(uint256 indexed productId, address indexed from, address indexed to);
     event StatusUpdated(uint256 indexed productId, Status newStatus, address indexed updatedBy);
 
-    // -------------------------------
+
     // Modifiers - reusable checks
-    // -------------------------------
 
     // This checks if a product actually exists in the system.
     modifier onlyExisting(uint256 productId) {
