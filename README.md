@@ -14,6 +14,14 @@ This project is a prototype of a blockchain-based food supply chain provenance s
 
 This repo contains:
 - `contracts/FoodProvenance.sol` — Draft contract (interfaces, events, data model, implemented core functions).
+## About the FoodProvenance Contract
+The `FoodProvenance` smart contract keeps a transparent record of how food products move through the supply chain.  
+It lets farmers register new product batches, distributors and retailers update status, and consumers verify a product’s history.  
+The system uses blockchain to make the data secure and tamper-proof.  
+Each product entry stores details like origin, current owner, and status.  
+Smart contracts ensure that only authorized people (with specific roles) can make updates.  
+This helps build trust, prevent fraud, and make the food journey visible from farm to table.
+
 - `README.md` — (this file).
 - `docs/` — Project Pitch as of now but will consist of other material later on. (TBD)
 
