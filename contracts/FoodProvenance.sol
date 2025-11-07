@@ -45,31 +45,31 @@ contract FoodProvenance is AccessControl {
     event StatusUpdated(uint256 indexed productId, Status newStatus, address indexed updatedBy);
 
 
-    // Modifiers - reusable checks
 
-    // This checks if a product actually exists in the system.
+
+    // checks if a product actually exists in the system.
     modifier onlyExisting(uint256 productId) {
         require(exists[productId], "Product does not exist");
         _;
     }
 
-    // This ensures only the product’s owner can perform certain actions.
+    // ensures only the product’s owner can perform certain actions.
     modifier onlyOwner(uint256 productId) {
         require(products[productId].owner == msg.sender, "Not the product owner");
         _;
     }
 
-    // -------------------------------
-    // Constructor - runs once when deployed
-    // -------------------------------
-    // The constructor sets the initial admin who can later assign roles.
+    
+
+    
+    
     constructor(address admin) {
         _setupRole(DEFAULT_ADMIN_ROLE, admin);
     }
 
-    // -------------------------------
-    // Function: registerProduct
-    // -------------------------------
+    
+
+    
     // This function lets the farmer add a new product batch to the blockchain.
     // It stores product details and emits an event for transparency.
     function registerProduct(
@@ -101,9 +101,9 @@ contract FoodProvenance is AccessControl {
         emit ProductRegistered(productId, msg.sender);
     }
 
-    // -------------------------------
-    // Function: transferOwnership
-    // -------------------------------
+    
+
+    
     // This lets the current owner (farmer, distributor, etc.) transfer the product to another address.
     // Each transfer is recorded for traceability.
     function transferOwnership(uint256 productId, address to)
@@ -123,9 +123,9 @@ contract FoodProvenance is AccessControl {
         emit OwnershipTransferred(productId, previousOwner, to);
     }
 
-    // -------------------------------
-    // Function: updateStatus
-    // -------------------------------
+    
+
+    
     // This lets authorized users (distributors, retailers, regulators) update product status.
     // Example: InTransit, Received, Recalled.
     function updateStatus(uint256 productId, Status newStatus)
@@ -146,9 +146,9 @@ contract FoodProvenance is AccessControl {
         emit StatusUpdated(productId, newStatus, msg.sender);
     }
 
-    // -------------------------------
-    // Function: verifyProduct
-    // -------------------------------
+    
+
+    
     // This lets anyone (like a consumer or regulator) check the product’s history and details.
     // It returns key info such as owner, origin, and past owners.
     function verifyProduct(uint256 productId)
@@ -169,9 +169,9 @@ contract FoodProvenance is AccessControl {
         return (p.id, p.owner, p.status, p.createdAt, p.origin, p.metadataURI, productHistory[productId]);
     }
 
-    // -------------------------------
-    // Function: getHistory
-    // -------------------------------
+    
+
+    
     // Returns the list of all owners who handled the product.
     function getHistory(uint256 productId)
         external
@@ -182,10 +182,9 @@ contract FoodProvenance is AccessControl {
         return productHistory[productId];
     }
 
-    // -------------------------------
-    // Function: existsProduct
-    // -------------------------------
-    // Simple helper to check if a product is registered or not.
+    
+    
+    //to check if a product is registered or not.
     function existsProduct(uint256 productId)
         external
         view
