@@ -59,8 +59,6 @@ contract FoodProvenance is AccessControl {
     event StatusUpdated(uint256 indexed productId, Status newStatus, address indexed updatedBy);
 
 
-
-
     // checks if a product actually exists in the system.
     modifier onlyExisting(uint256 productId) {
         require(exists[productId], "Product does not exist");
@@ -74,14 +72,9 @@ contract FoodProvenance is AccessControl {
     }
 
     
-
-    
-    
     constructor(address admin) {
         _setupRole(DEFAULT_ADMIN_ROLE, admin);
     }
-
-    
 
     
     // This function lets the farmer add a new product batch to the blockchain.
@@ -116,8 +109,6 @@ contract FoodProvenance is AccessControl {
     }
 
     
-
-    
     // This lets the current owner (farmer, distributor, etc.) transfer the product to another address.
     // Each transfer is recorded for traceability.
     function transferOwnership(uint256 productId, address to)
@@ -136,8 +127,6 @@ contract FoodProvenance is AccessControl {
         // Emit event to record this change
         emit OwnershipTransferred(productId, previousOwner, to);
     }
-
-    
 
     
     // This lets authorized users (distributors, retailers, regulators) update product status.
@@ -161,8 +150,6 @@ contract FoodProvenance is AccessControl {
     }
 
     
-
-    
     // This lets anyone (like a consumer or regulator) check the product’s history and details.
     // It returns key info such as owner, origin, and past owners.
     function verifyProduct(uint256 productId)
@@ -184,8 +171,6 @@ contract FoodProvenance is AccessControl {
     }
 
     
-
-    
     // Returns the list of all owners who handled the product.
     function getHistory(uint256 productId)
         external
@@ -195,8 +180,6 @@ contract FoodProvenance is AccessControl {
     {
         return productHistory[productId];
     }
-
-    
     
     //to check if a product is registered or not.
     function existsProduct(uint256 productId)
