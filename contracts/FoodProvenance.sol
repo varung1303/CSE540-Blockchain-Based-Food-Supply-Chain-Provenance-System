@@ -1,10 +1,24 @@
 
 pragma solidity ^0.8.19;
 
-// This draft smart contract is for a blockchain-based food supply chain provenance system.
-// It records how food products move from farmers to consumers.
-// Each product can be registered, transferred, and verified.
-// The contract uses roles (farmer, distributor, retailer, regulator) to control who can do what.
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+/*
+ * FoodProvenance Smart Contract
+ * ------------------------------
+ * This contract keeps track of food batches as they move through the supply chain.
+ * Farmers register products on the blockchain with details like origin and metadata.
+ * Distributors and retailers update product status as it moves from farm to market.
+ * Regulators and consumers can view and verify the full history of each product.
+ *
+ * The goal is to make food tracking transparent, secure, and tamper-proof.
+ * Every change is recorded on the blockchain and cannot be altered later.
+ * The system uses roles to control who can register, transfer, or update data.
+ *
+ * This draft version shows the main functions, structures, and logic
+ */
+
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
