@@ -24,6 +24,18 @@ CSE540-Blockchain-Based-Food-Supply-Chain-Provenance-System
   - Review System: Consumer ratings and feedback tied to blockchain ownership
   - Modern UI: React-based interface with purple/blue gradient design and MetaMask wallet integration
 
+  ---
+  Project Goals
+
+  1. Transparency: Provide tamper-evident, verifiable provenance for food products
+  2. Trust: Enable stakeholder verification and create a chain of trust
+  3. Traceability: Allow rapid trace-back in contamination or fraud cases
+  4. Sustainability: Verify and promote renewable energy usage in manufacturing
+  5. Intelligence: Provide real-time supply chain analytics without centralized systems
+
+  ---
+
+
   Technology Stack
 
   - Smart Contracts: Solidity 0.8.0, Truffle v5.11.5
