@@ -1,0 +1,375 @@
+/* ========================================
+   PRODUCT PAGE STYLES
+   Modern Timeline & Product Display
+======================================== */
+
+/* Page Wrapper */
+.wrapper {
+  padding: var(--space-3xl) var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Timeline Container with Modern Design */
+.timeline-container {
+  position: relative;
+  padding: var(--space-xl) 0;
+  margin: var(--space-2xl) 0;
+}
+
+/* Timeline Item */
+.timeline-item {
+  display: flex;
+  margin-bottom: var(--space-3xl);
+  position: relative;
+}
+
+/* Timeline Marker with Gradient */
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: var(--space-2xl);
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced Timeline Icon */
+.timeline-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  z-index: 3;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Timeline Connecting Line */
+.timeline-line {
+  width: 3px;
+  flex-grow: 1;
+  background: linear-gradient(180deg, var(--primary-start) 0%, var(--primary-end) 100%);
+  margin-top: var(--space-sm);
+  min-height: 80px;
+  border-radius: var(--radius-full);
+}
+
+/* Timeline Content Card */
+.timeline-content {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-left: 3px solid;
+  border-image: var(--bg-primary) 1;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.2s ease;
+}
+
+.timeline-content:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Timeline Header */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--gray-100);
+}
+
+/* Timeline Date Badge */
+.timeline-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+}
+
+/* Timeline Title */
+.timeline-title {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* Timeline Body */
+.timeline-body {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+.timeline-body p {
+  margin: var(--space-sm) 0;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.timeline-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Product Details Section */
+.product-details {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  margin-bottom: var(--space-2xl);
+}
+
+.product-title {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-lg);
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--bg-primary);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Reviews Section Styling */
+.bw-review-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.bw-review-wrapper textarea {
+  width: 100%;
+  padding: var(--space-md);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: var(--space-md);
+  transition: all var(--transition-base);
+}
+
+.bw-review-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--primary-start);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.bw-review-wrapper .d-flex {
+  gap: var(--space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bw-review-wrapper button {
+  background: var(--bg-primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-xl);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.bw-review-wrapper button:hover:not(:disabled) {
+  box-shadow: var(--shadow-lg);
+}
+
+.bw-review-wrapper button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Individual Review Cards */
+.bottom-wrapper .my-1.border {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 126, 234, 0.15) !important;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin: var(--space-md) 0;
+}
+
+.bottom-wrapper .my-1.border .badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  font-weight: 600;
+}
+
+/* Heading Style */
+.heading {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .timeline-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .timeline-marker {
+    margin-right: var(--space-lg);
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .timeline-content {
+    padding: var(--space-lg);
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .timeline-date {
+    font-size: 0.8rem;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline-body {
+    padding: var(--space-md);
+  }
+
+  .timeline-body strong {
+    min-width: 100px;
+  }
+
+  .product-details {
+    padding: var(--space-xl);
+  }
+
+  .product-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .timeline-item {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .timeline-marker {
+    margin-right: var(--space-md);
+  }
+
+  .timeline-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .timeline-content {
+    padding: var(--space-md);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    padding: 0.25rem var(--space-sm);
+  }
+
+  .timeline-title {
+    font-size: 1rem;
+  }
+
+  .timeline-body {
+    padding: var(--space-sm);
+  }
+
+  .timeline-body strong {
+    display: block;
+    min-width: auto;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-details {
+    padding: var(--space-lg);
+  }
+
+  .product-title {
+    font-size: 1.5rem;
+  }
+}

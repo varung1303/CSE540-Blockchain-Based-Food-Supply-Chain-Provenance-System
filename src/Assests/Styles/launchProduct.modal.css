@@ -1,0 +1,209 @@
+/* ========================================
+   LAUNCH PRODUCT MODAL STYLES
+   Modern Modal with Glassmorphism
+======================================== */
+
+/* Supplier Selection Wrapper */
+.supplier-wrapper-label {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-lg);
+  display: block;
+}
+
+/* Supplier Card */
+.supplier-card {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(102, 126, 234, 0.1);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.supplier-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.supplier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.supplier-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Selected State */
+.supplier-card-selected {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+  border-color: var(--primary-start);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.supplier-card-selected::before {
+  transform: scaleX(1);
+}
+
+/* Checkmark Indicator for Selected Card */
+.supplier-card-selected::after {
+  content: '✓';
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 32px;
+  height: 32px;
+  background: var(--bg-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Supplier Address */
+.supplier-card-address {
+  font-weight: 700;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  word-break: break-all;
+  line-height: 1.6;
+  padding: var(--space-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary-start);
+  transition: all var(--transition-base);
+}
+
+.supplier-card:hover .supplier-card-address {
+  background: rgba(102, 126, 234, 0.08);
+  border-left-width: 4px;
+}
+
+/* Supplier Info */
+.supplier-info {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.supplier-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-xs) 0;
+  font-size: 0.875rem;
+}
+
+.supplier-info-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.supplier-info-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Grid Layout for Supplier Cards */
+.supplier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+/* Modal Specific Overrides */
+.modal-supplier-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.modal-supplier-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .supplier-wrapper-label {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .supplier-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .supplier-card {
+    padding: var(--space-md);
+  }
+
+  .supplier-card-address {
+    font-size: 0.8rem;
+    padding: var(--space-sm);
+  }
+
+  .supplier-card-selected::after {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .supplier-wrapper-label {
+    font-size: 1rem;
+  }
+
+  .supplier-card {
+    padding: var(--space-sm);
+  }
+
+  .supplier-card-address {
+    font-size: 0.75rem;
+  }
+
+  .supplier-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .supplier-card-selected::after {
+    width: 24px;
+    height: 24px;
+    font-size: 0.875rem;
+    top: var(--space-sm);
+    right: var(--space-sm);
+  }
+}

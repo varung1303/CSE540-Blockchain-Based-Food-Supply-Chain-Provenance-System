@@ -1,0 +1,264 @@
+/* ========================================
+   DASHBOARD PAGE STYLES
+   Modern Analytics Dashboard Design
+======================================== */
+
+/* Main Dashboard Container */
+.tw-about {
+  margin: 0;
+  padding: var(--space-3xl) 0;
+}
+
+/* Hero Section with Gradient Text */
+.tw-heading {
+  font-size: 3.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.tw-sub-heading {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+/* Section Headings */
+.mw-heading {
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-align: center;
+  margin: var(--space-3xl) 0 var(--space-2xl);
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.mw-sub-heading {
+  color: var(--primary-start);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.bw-heading {
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-align: center;
+  margin: var(--space-3xl) 0 var(--space-2xl);
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Stats Cards */
+.bw-stats-card {
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.bw-stats-card-body {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  transition: box-shadow 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bw-stats-card-body:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Stats Count Badge */
+.bw-stats-card-count {
+  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  background: var(--bg-primary);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+  margin-bottom: var(--space-md);
+}
+
+/* Stats Label */
+.bw-stats-card-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  text-align: center;
+}
+
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+/* Info Cards */
+.dashboard-info-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.dashboard-info-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Action Buttons */
+.dashboard-action-btn {
+  background: var(--bg-primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-xl);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.dashboard-action-btn:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.dashboard-action-btn:active {
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tw-heading {
+    font-size: 2.75rem;
+  }
+
+  .mw-heading,
+  .bw-heading {
+    font-size: 2rem;
+  }
+
+  .bw-stats-card-count {
+    height: 100px;
+    width: 100px;
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tw-about {
+    padding: var(--space-2xl) 0;
+  }
+
+  .tw-heading {
+    font-size: 2.25rem;
+  }
+
+  .tw-sub-heading {
+    font-size: 1.1rem;
+  }
+
+  .mw-heading,
+  .bw-heading {
+    font-size: 1.75rem;
+    margin: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .bw-stats-card {
+    padding: 0 var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .bw-stats-card-body {
+    padding: var(--space-lg);
+  }
+
+  .bw-stats-card-count {
+    height: 90px;
+    width: 90px;
+    font-size: 2.5rem;
+  }
+
+  .bw-stats-card-label {
+    font-size: 1.1rem;
+    
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .tw-heading {
+    font-size: 1.875rem;
+  }
+
+  .tw-sub-heading {
+    font-size: 1rem;
+  }
+
+  .mw-heading,
+  .bw-heading {
+    font-size: 1.5rem;
+  }
+
+  .bw-stats-card-body {
+    padding: var(--space-md);
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bw-stats-card-count {
+    height: 80px;
+    width: 80px;
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .bw-stats-card-label {
+    margin-left: 0;
+  }
+
+  .bw-stats-card-label::before {
+    display: none;
+  }
+}

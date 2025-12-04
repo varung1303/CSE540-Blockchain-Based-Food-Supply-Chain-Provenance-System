@@ -1,0 +1,304 @@
+/* ========================================
+   APP COMPONENT STYLES
+   Modern Design with Glassmorphism
+======================================== */
+
+/* App Container */
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* App Logo with Modern Animation */
+.App-logo {
+  height: 45vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+  transition: all var(--transition-slow);
+}
+
+.App-logo:hover {
+  filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.5));
+  transform: scale(1.05);
+}
+
+
+/* App Header with Gradient Background */
+.App-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + 2vmin);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Patterns */
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.App-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* App Link Styling */
+.App-link {
+  color: #f093fb;
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.App-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-slow);
+}
+
+.App-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.App-link:hover::before {
+  left: 100%;
+}
+
+/* Main Content Area */
+.App-content {
+  padding: var(--space-2xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Navigation Bar Styles */
+.App-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-base);
+}
+
+.App-nav.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Container Styles */
+.App-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.App-container-fluid {
+  width: 100%;
+  padding: 0 var(--space-lg);
+}
+
+/* Section Styles */
+.App-section {
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.App-section-title {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.App-section-subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Layouts */
+.App-grid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.App-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.App-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.App-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Feature Card with Glassmorphism */
+.App-feature-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.App-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.App-feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-2xl);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+.App-feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Loading State */
+.App-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: var(--space-lg);
+}
+
+.App-loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary-start);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-loading-text {
+  background: var(--bg-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .App-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .App-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .App-content {
+    padding: var(--space-xl);
+  }
+
+  .App-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .App-section-title {
+    font-size: 2rem;
+  }
+
+  .App-grid,
+  .App-grid-2,
+  .App-grid-3,
+  .App-grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .App-logo {
+    height: 35vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-container,
+  .App-container-fluid {
+    padding: 0 var(--space-md);
+  }
+
+  .App-content {
+    padding: var(--space-lg);
+  }
+
+  .App-section-title {
+    font-size: 1.75rem;
+  }
+
+  .App-feature-card {
+    padding: var(--space-lg);
+  }
+}
