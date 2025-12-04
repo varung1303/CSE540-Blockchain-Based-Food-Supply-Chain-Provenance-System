@@ -32,33 +32,6 @@ CSE540-Blockchain-Based-Food-Supply-Chain-Provenance-System
   - Wallet: MetaMask integration
 
   ---
-
-  Repository Contents
-
-  ├── src/
-  │   ├── Smart-Contract/              # Truffle project with Solidity contracts
-  │   │   ├── Contracts/
-  │   │   │   ├── Admin.sol           # Access control
-  │   │   │   ├── Stakeholder.sol     # Base stakeholder management
-  │   │   │   ├── Farmer.sol          # Farmer-specific operations
-  │   │   │   ├── Manufacturer.sol    # Manufacturing with renewable energy tracking
-  │   │   │   ├── Retailer.sol        # Retailer operations
-  │   │   │   ├── Product.sol         # Product lifecycle & transfers
-  │   │   │   └── Main.sol            # Orchestration contract
-  │   │   ├── ABI/                    # Contract ABIs for frontend
-  │   │   ├── migrations/             # Deployment scripts
-  │   │   └── truffle-config.js       # Truffle configuration
-  │   │
-  │   ├── Components/                  # React UI components
-  │   ├── Pages/                       # Application pages
-  │   ├── Services/                    # Context, reducers, utilities
-  │   ├── Layouts/                     # Navbar and layout
-  │   └── Assests/Styles/              # CSS stylesheets
-  ├── public/                          # Public assets
-  ├── package.json                     # Dependencies
-  └── README.md                        # This file
-
-
   Dependencies or Setup Instructions
 
   Prerequisites
