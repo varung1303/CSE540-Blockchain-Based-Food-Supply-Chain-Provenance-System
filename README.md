@@ -54,7 +54,6 @@ CSE540-Blockchain-Based-Food-Supply-Chain-Provenance-System
   │   ├── Services/                    # Context, reducers, utilities
   │   ├── Layouts/                     # Navbar and layout
   │   └── Assests/Styles/              # CSS stylesheets
-  │
   ├── public/                          # Public assets
   ├── package.json                     # Dependencies
   └── README.md                        # This file
